@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+
+<p class="username"><?php echo $displayUsername; ?></p>
+<p class="friendscount"><?php echo $displayFriendsCount; ?> Friends</p>
+
+<div class="buttons">
+    <button id="loadDetails">Load Additional Details</button>
+</div>
+
+<div id="additionalDetails"></div>
+
+<script>
+document.getElementById("loadDetails").addEventListener("click", function() {
+    var username = "<?php echo $username; ?>"; // Get username from PHP variable
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "fetch_additional_details.php?username=" + username, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("additionalDetails").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+});
+</script>
+
+</body>
+</html>

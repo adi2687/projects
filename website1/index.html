@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendify.com</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" href=".png" type="image/x-icon">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        .heading {
+            position: absolute;
+            left: 64%;
+        }
+
+        .info-box {
+            width: 30vw;
+            height: auto;
+
+            font-weight: bold;
+            visibility: hidden;
+            left: 50%;
+            position: absolute;
+            z-index: 3;
+            background-color: #3A5891;
+            padding: 30px;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            top:50%;
+            transform: translate(-50%,-50%);
+            z-index: 1001;
+        }
+
+        .info-box::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            /* Position the triangle */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            
+            /* Same color as the .info-box background */
+        }
+
+        
+
+        
+
+        body {
+            background-color: white;
+        }
+.info-box.active{
+    display: block;
+    visibility: visible;
+}
+        
+        
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+            z-index: 999; /* ensure it's on top of everything */
+            display: none; /* initially hidden */
+        }
+        .toggle-container{
+            z-index: 1;
+        }
+        #overlay span{
+            position: absolute;
+            color:#3A5891;
+            left:70%;
+            top:25%;
+            width:1%;
+            height:4%;
+            cursor: pointer;
+            font-size: 42px;
+            z-index: 5;
+            
+        }
+        #overlay span:hover{
+            color:white
+        }
+    </style>
+</head>
+
+<body>
+    <img src="header.png" class="logo">
+    <p class="heading">FRIENDIFY</p>
+    <!-- <img src="logomain1.png" class="logomain"> -->
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="./formhandler.inc.php" method="post">
+                <h1>Create Account</h1>
+                <!-- <input type="text" name="name" id="" placeholder="Full Name"> -->
+                <input type="email" name="email" id="" placeholder="Mobile Number or Email address">
+                <input type="password" name="pass" id="" placeholder="Password">
+                <input type="text" name="username" id="" placeholder="Username">
+                <p>By signing up, you agree to our Terms, Privacy Policy and Cookies Policy.</p>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="./searchusers.php" method="post">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <img src="google.svg" alt="" class="fa-brands">
+                    <img src="facebook.svg" alt="" class="fa-brands">
+                    <img src="github.svg" alt="" class="fa-brands github">
+                    <img src="linkedin.svg" alt="" class="fa-brands linkedin">
+                </div>
+                <span>Or use your email password</span>
+                <input type="text" name="usersearch" id="" placeholder="Enter your username">
+                <input type="password" name="pass" id="" placeholder="Password">
+                <a href="#" class="yellow">Forgot Your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Already have an account?</h1>
+                    <p>Explore and expand your interests and share photos,stories & reels with friends you love.....</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>We haven't met before right?</h1>
+                    <b class="intro1">WELCOME TO FRIENDIFY</b>
+                    <!-- <p>Then you should try us!</p> -->
+                    <span class="line">Register with your personal details to use all of site features</span>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="laptop.png" class="laptop">
+    <img src="image4.webp" class="inthelaptop" id="inthelaptop">
+    <div class="foot">
+        <p id="about" onclick="pop('aboutinfo')">About</p>
+        <p id="contact" onclick="pop('contactinfo')">Contact</p>
+        <p id="developers" onclick="pop('developersinfo')">Developers</p>
+        <p id="terms" onclick="pop('termsinfo')">Terms</p>
+        <p id="privacy" onclick="pop('privacyinfo')">Privacy</p>
+    </div>
+    
+    <div class="info-box aboutinfo infobox">
+        <h2>About Friendify</h2>
+        <p>Friendify is a social media platform where you can share your thoughts, photos, stories and reels with friends and family. You can also connect with people who share similar interests and hobbies. Our mission is to provide a safe and fun environment for users to express themselves and connect with others.</p>
+    </div>
+    
+    <div class="info-box contactinfo infobox">
+        <h2>Contact Us</h2>
+        <p>You can reach us at contact@friendify.com for any inquiries or support. We're here to help you with any issues or questions you may have.</p>
+    </div>
+    
+    <div class="info-box developersinfo infobox">
+        <h2>Developers</h2>
+        <p>Our team of developers is dedicated to improving Friendify. If you have any suggestions or want to collaborate, email us at devs@friendify.com.</p>
+    </div>
+    
+    <div class="info-box termsinfo infobox">
+        <h2>Terms of Service</h2>
+        <p>Please read our Terms of Service to understand the rules and regulations for using Friendify. Your continued use of the site means you agree to these terms.</p>
+    </div>
+    
+    <div class="info-box privacyinfo infobox">
+        <h2>Privacy</h2>
+        <p>All the info that you submit is encrypted and even can't be accessed by the devs. To add friends you might use location which is accessed by the user permission only.</p>
+    </div>
+
+    <div class="info">
+        <p>A production by Aditya Kurani and Paras Rana</p>
+    </div>
+    
+
+    <p class="copyright">FRIENDIFY © 2024</p>
+    <div id="overlay">
+        <span id="closebutton">&times;</span>
+    </div>
+    <script src="index.js">
+        
+    </script>
+    </body>
+    </html>

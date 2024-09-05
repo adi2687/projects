@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 10vw;
+            height: 10vh;
+            border: 5px solid red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            justify-content: center;
+            visibility: hidden;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <p id="text">Hover over me</p>
+    <div id="div12">
+        <p>hii</p>
+    </div>
+    <script>
+        let a = document.getElementById("text");
+        let b = document.getElementById("div12")
+        a.addEventListener("mouseover", function () {
+            b.style.visibility = "visible"
+        
+        });
+        a.addEventListener("mouseout",function(){
+            b.style.visibility="hidden"
+        });
+    </script>
+</body>
+
+</html>

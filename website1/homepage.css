@@ -1,0 +1,52 @@
+/* #greet, #timegreet {
+    font-size: 180%;
+    font-weight: bold;
+    font-family: monospace; */
+    /* position: absolute;
+    top: 16%;
+}
+
+.logo {
+    position: absolute;
+    width: 14%;
+    height: 14%;
+    left: 2%;
+    top: 3%;
+}
+
+#timegreet {
+    left: 1%;
+}
+
+#greet {
+    left: 4.8%;
+
+}
+
+body {
+    background-color: rgb(28, 30, 33);
+    color: white;
+}
+
+.profile {
+    position: absolute;
+    bottom: 10%;
+    left: 1%;
+    width: 20%;
+    height: 17%;
+    border: 3px solid gray;
+    border-radius: 18px;
+    /* background-image: url(download.jpeg) ; */
+/* }
+
+.profile img{
+    position: absolute;
+    left:4%;
+    top:2%;
+    width:13%;
+    height:40%;
+}
+.profileimg{
+width:100%;
+
+}  */

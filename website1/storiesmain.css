@@ -1,0 +1,83 @@
+.main{
+    display: flex;
+    flex-direction: row;
+}
+.left{
+    width:25vw;
+    height:100vh;
+    border:1px solid red;
+    padding:2px
+}
+.right{
+    width:75vw;
+    height:100vh;
+    border:1px solid blue;
+    background-color: rgb(28,31,34);
+}
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color:white;
+}
+svg{
+    width:30px;
+    height:30px;
+    /* margin-left: */
+    stroke:white;
+    stroke-width: 0px;
+    /* background-color: white; */
+cursor: pointer;
+}
+.images{
+    display: flex;
+    flex-direction: row;
+    /* border:1px solid green; */
+    padding:10px;
+    /* background-color: grey; */
+}
+.logo{
+    width:100px;
+    height:100px;
+    margin-top:-30px;
+    /* border:1px solid red */
+}
+.story{
+    /* border:1px solid red; */
+    display: flex;
+    flex-direction: row;
+    margin-top:0px;
+    /* justify-content: flex-start; */
+    padding:13px
+}
+.story svg{
+    /* margin-top:8%; */
+    /* margin-right: auto; */
+    position: relative;
+    top:50%;
+    left:50%;
+    /* padding:12px; */
+    transform: translate(-50%,-50%);
+    /* background-color: white; */
+    fill:white;
+    width:22px;
+    height:22px
+    
+}
+.story div{
+    /* bordeR:1px solid red; */
+    margin-left: auto;
+    width:42px;
+    margin-top:4%;
+    border-radius: 50%;
+    background-color: rgb(58, 54, 54);
+    height:43px;
+    cursor: pointer;
+}
+.main{
+    background-color: rgba(36,37,38,255)
+}
+hr{
+    margin-top:10px
+}
