@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Friendify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="images/logomain.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="responsive.css"> -->
+    <style>
+        .laptop {
+            background-image: url("images/mac.jpeg");
+        }
+
+        header {
+            background-image: url("images/header.png")
+        }
+
+        .login-form form {
+            border: 5px solid transparent
+        }
+
+        .error-txt,.error-txtlogin {
+            color: red;
+            font-weight: 600;
+            font-size: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            margin-top: 0%;
+            position: relative;
+            top: 10px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .login-form input[type='submit'],
+        .signup-form input[type='submit'] {
+            border: 1px solid red;
+            height: 110%;
+            margin-top: -60px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Friendify</p>
+    </header>
+    <div class="main">
+        <div class="laptop">
+            <div class="images">
+                <img src="images/imagethree.png" alt="Mac Image" class="macimage" loading="lazy">
+                <img src="images/imageone.png" alt="Image Change" class="imagechange" loading="lazy">
+            </div>
+        </div>
+        <div class="container">
+            <!-- <input type="checkbox" id="flip"> -->
+            <div class="cover">
+                <div class="front">
+                    <div class="text">
+                        <span class="text-2">
+                            <h1>We haven't met before right?</h1>
+                            <br>
+                            <h2>Welcome to Friendify</h2>
+                            <br>
+                            <br>
+                            <p>Register with your personal details to use all of the site features</p>
+                        </span>
+                    </div>
+                    <div class="text sign-up-text" id="signup">
+                        <p>Don't have an account?</p>
+                        <button class="signinbutton" id="signinbutton">Connect with friends</button>
+                        <button class="signupbutton">Continue to connect</button>
+                    </div>
+                </div>
+                <div class="back">
+                    <img class="backImg" src="images/logomain.png" alt="Logo" loading="lazy">
+                    <div class="text">
+                        <span class="text-1">Complete miles of journey <br> with one step</span>
+                        <span class="text-2">Let's get started</span>
+                    </div>
+                </div>
+            </div>
+            <div class="forms">
+                <div class="form-content">
+                    <div class="login-form">
+                        <h1>Friendify</h1>
+                        <div class="title">Login</div>
+                        <div class="error-txtlogin"></div>
+                        <form action="login.php" method="post">
+                            <div class="input-boxes">
+                                <div class="input-box toggle">
+                                    <i class="fas fa-envelope" aria-label="Email Icon"></i>
+                                    <input type="text" name="emailorusername" placeholder="Enter your email or username" required
+                                        class="logininfo">
+                                </div>
+                                <!-- <div class="input-box" id="username" style="display: none;">
+                                    <input type="email" name="email" placeholder="Enter your name">
+                                </div> -->
+                                <div class="input-box">
+                                    <i class="fas fa-lock" aria-label="Password Icon"></i>
+                                    <input type="password" name="password" placeholder="Enter your password" required>
+                                    <svg id="togglePassword" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                        <path
+                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                                    </svg>
+                                </div>
+
+                                <div class="text"><a href="#">Forgot password?</a></div>
+                                <!-- <SPAN class="usernamelogin">
+                                    <p>Or login with username</p>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+
+                                </SPAN> -->
+                                <div class="loginwithgoogle">
+                                    <img src="images/google.png" alt="">
+                                    <p>Login with google</p>
+                                </div>
+                                <div class="button input-box">
+                                    <input type="submit" value="Connect with friends">
+                                </div>
+                                <div class="signupinfo">
+                                    Don't have an account ?
+                                    <span>
+                                        Sign Up
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-form">
+                        <h1>Friendify</h1>
+                        <div class="title">Signup</div>
+                        <form action="signup.php" method="post">
+                            <div class="error-txt"></div>
+                            <div class="input-boxes">
+                                <div class="name">
+                                    <div class="input-box fname">
+                                        <i class="fas fa-user" aria-label="User Icon"></i>
+                                        <input type="text" name="fname" placeholder="First Name" required>
+                                    </div>
+                                    <div class="input-box lname">
+                                        <!-- <i class="fas fa-user" aria-label="User Icon"></i> -->
+                                        <input type="text" name="lname" placeholder="Last Name" required>
+                                    </div>
+                                </div>
+
+                                <div class="input-box">
+                                    <i class="fas fa-envelope" aria-label="Email Icon"></i>
+                                    <input type="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-lock" aria-label="Password Icon"></i>
+                                    <input type="password" name="password" placeholder="Enter your password" required>
+                                    <!-- <i class="bi bi-ey"></i> -->
+                                    <svg id="togglePasswordinfo" xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                                        <path
+                                            d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+                                    </svg>
+                                </div>
+                                <div class="button input-box">
+                                    <input type="submit" value="Sign Up">
+                                </div>
+                                <div class="text sign-up-text" id="signuptext">Already have an account? <label
+                                        for="flip">Login
+                                        now</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Created By Aditya Kurani
+    </footer>
+    <script src="script.js"></script>
+    <script src="signup.js"></script>
+    <script src="login.js"></script>
+</body>
+
+</html>
